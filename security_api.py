@@ -15,7 +15,7 @@ api_key = os.environ.get("OPENAI_API_KEY")
 if not api_key:
     raise ValueError("No OPENAI_API_KEY found in environment variables!")
 
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=api_key, base_url="https://aipipe.org/openai/v1")
 
 
 # --- Helper Function: The Bouncer's Logic ---
