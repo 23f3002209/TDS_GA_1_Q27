@@ -2,8 +2,11 @@ import os
 import html # Used for sanitizing (cleaning) text
 from flask import Flask, request, jsonify
 from openai import OpenAI
+from flask_cors import CORS  # <--- NEW IMPORT 1/2
 
 app = Flask(__name__)
+CORS(app)  # <--- NEW LINE 2/2: This tells the browser "It's okay to talk to me"
+
 
 # Initialize the OpenAI client (The "Brain" that detects bad words)
 # You need an API Key here. In a real app, use environment variables!
